@@ -1,0 +1,156 @@
+@import "dimen";
+@import "colors";
+
+@mixin text {
+  font-family: 'Source Sans Pro';
+  letter-spacing: -0.2px;
+}
+
+@mixin buttons{
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+html, body{
+  margin: 0;
+}
+
+#container {
+  width: $containerWidth;
+  height: $containerHeight;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 100px 530px 100px;
+  grid-template-columns: 640px 300px;
+}
+
+header {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+ aside {
+  height: 295px;
+  margin-top: 47px;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+} 
+
+p{
+  @include text;
+  height: 155px;
+  line-height: 26px;
+  margin-top: 10px;
+  color: $textColor;
+  font-size: $textSize;
+}
+
+h1{
+    @include text;
+    height: 120px;
+    line-height: 38px;
+    margin: 0px;
+    color: $headerColor;
+    font-size: $headerTextSize;
+}
+
+main {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  overflow: hidden;
+}
+
+footer {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+
+.flex-container-1{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content:end;
+  overflow: hidden;
+  height: 200px;
+  width: 1230px;
+  left: -605px;
+  margin-top: 47px;
+  gap: $elementGap;
+}
+
+.flex-container-2{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  height: 200px;
+  width: 1240px;
+  left: -595px; 
+  top: 10px;
+  gap: 100px;
+}  
+
+.flex-container-images{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  overflow: hidden;
+  height: 200px;
+  width: 1080px;
+  gap: $elementGap;
+}
+
+.flex-container-buttons{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 130px;
+  width: 60px;
+  left: -20px;
+  gap: $elementGap;
+}
+
+img{
+  position: relative;
+  height: $imgHeight;
+  max-width: $imgMaxWidth;
+  border-radius: $elBorderRadius;
+}
+
+button{
+  height: $btnHeight;
+  width: $btnWidth;
+  border: 1;
+  border-color:$borderColor;
+  border-radius: $elBorderRadius;
+}
+
+#arrowLeft{
+  background-image: url("../../assets/arrow-gray-left.png");
+  @include buttons;
+}
+
+#arrowLeft:hover{
+  background-image: url("../../assets/arrow-blue-left.png");
+  border-color:$borderColorHover;
+}
+
+#arrowRight{
+  background-image: url("../../assets/arrow-gray-right.png");
+  @include buttons;
+}
+
+#arrowRight:hover{
+  background-image: url("../../assets/arrow-blue-right.png");
+  border-color:$borderColorHover;
+}
+
+#arrowRight:disabled{
+  background-color: white;
+}
+
+#arrowLeft:disabled{
+  background-color:white;
+}
