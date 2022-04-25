@@ -25,7 +25,7 @@ header {
 
 aside {
   height: 295px;
-  margin-top: 47px;
+  margin-top: 60px;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
@@ -37,9 +37,8 @@ aside {
 p {
   font-family: 'Source Sans Pro';
   letter-spacing: -0.2px;
-  height: 155px;
   line-height: 26px;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #484A4C;
   font-size: 18px;
 }
@@ -47,9 +46,9 @@ p {
 h1 {
   font-family: 'Source Sans Pro';
   letter-spacing: -0.2px;
-  height: 120px;
   line-height: 38px;
   margin: 0px;
+  padding-bottom: 5px;
   color: #134880;
   font-size: 32px;
 }
@@ -62,6 +61,7 @@ main {
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
   overflow: hidden;
+  margin-top: 15px;
 }
 
 footer {
@@ -88,7 +88,7 @@ footer {
   overflow: hidden;
   height: 200px;
   width: 1230px;
-  left: -605px;
+  left: -610px;
   margin-top: 47px;
   gap: 10px;
 }
@@ -107,7 +107,7 @@ footer {
           justify-content: end;
   height: 200px;
   width: 1240px;
-  left: -595px;
+  left: -600px;
   top: 10px;
   gap: 100px;
 }
@@ -127,6 +127,7 @@ footer {
   overflow: hidden;
   height: 200px;
   width: 1080px;
+  left: -20px;
   gap: 10px;
 }
 
@@ -159,8 +160,9 @@ button {
   height: 60px;
   width: 60px;
   border: 1;
-  border-color: black;
+  border-color: #DDDDDD;
   border-radius: 5px;
+  background-color: white;
 }
 
 #arrowLeft {
@@ -169,9 +171,21 @@ button {
   background-position: center;
 }
 
+#arrowLeft:disabled {
+  background-color: white;
+}
+
 #arrowLeft:hover {
   background-image: url("../../assets/arrow-blue-left.png");
   border-color: #134880;
+  background-color: white;
+}
+
+#arrowLeft:hover:disabled {
+  background-image: url("../../assets/arrow-gray-left.png");
+  border-color: #DDDDDD;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #arrowRight {
@@ -180,16 +194,20 @@ button {
   background-position: center;
 }
 
-#arrowRight:hover {
-  background-image: url("../../assets/arrow-blue-right.png");
-  border-color: #134880;
-}
-
 #arrowRight:disabled {
   background-color: white;
 }
 
-#arrowLeft:disabled {
+#arrowRight:hover {
+  background-image: url("../../assets/arrow-blue-right.png");
+  border-color: #134880;
   background-color: white;
+}
+
+#arrowRight:hover:disabled {
+  background-image: url("../../assets/arrow-gray-right.png");
+  border-color: #DDDDDD;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 /*# sourceMappingURL=style.css.map */

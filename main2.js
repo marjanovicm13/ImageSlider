@@ -7,7 +7,9 @@ $(document).ready(function () {
     //Clicking left arrow button
     $("#arrowLeft").on("click", function () {
         $("#arrowLeft").prop("disabled", true);
-        $("#arrowRight").prop("disabled", true); //Disable both arrow buttons when one of them is clicked
+        $("#arrowRight").prop("disabled", true);
+        $("#arrowRight:hover").prop("disabled", true);
+        $("#arrowLeft:hover").prop("disabled", true); //Disable both arrow buttons when one of them is clicked
 
         //Left - Row 1
         slideLeft(1);
@@ -19,7 +21,9 @@ $(document).ready(function () {
     //Clicking right arrow button
     $("#arrowRight").on("click", function () {
         $("#arrowRight").prop("disabled", true);
-        $("#arrowLeft").prop("disabled", true); //Disable both arrow buttons when one of them is clicked
+        $("#arrowLeft").prop("disabled", true);
+        $("#arrowRight:hover").prop("disabled", true);
+        $("#arrowLeft:hover").prop("disabled", true); //Disable both arrow buttons when one of them is clicked
 
         //Right - row 1
         slideRight(1);

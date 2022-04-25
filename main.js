@@ -5,19 +5,25 @@ $(document).ready(function(){
     //Clicking left arrow button
     $("#arrowLeft").on("click", function(){
         $("#arrowLeft").prop("disabled", true);
-        $("#arrowRight").prop("disabled", true); //Disable both arrow buttons when one of them is clicked
+        $("#arrowRight").prop("disabled", true); 
+        $("#arrowRight:hover").prop("disabled", true);
+        $("#arrowLeft:hover").prop("disabled", true); //Disable both arrow buttons when one of them is clicked
 
         //Left - Row 1
         slideLeft(1);
 
         //Row 2
         slideLeft(2);
+
+       
     })
     
     //Clicking right arrow button
     $("#arrowRight").on("click", function(){
         $("#arrowRight").prop("disabled", true);
-        $("#arrowLeft").prop("disabled", true); //Disable both arrow buttons when one of them is clicked
+        $("#arrowLeft").prop("disabled", true);
+        $("#arrowRight:hover").prop("disabled", true);
+        $("#arrowLeft:hover").prop("disabled", true); //Disable both arrow buttons when one of them is clicked
 
         //Right - row 1
         slideRight(1);
@@ -29,11 +35,11 @@ $(document).ready(function(){
 
 //Slide images left
 function slideLeft(rowNumber){
-    const imgClass = $(".row" + rowNumber);
+    const imgClass = $(`.row${rowNumber}`);
     imgWidth =  imgClass.first().width() + 10; //Width + padding of first image in row
 
     imgClass.first().nextAll().each(function(){
-        $(this).animate({left: "-=" + imgWidth}); //Move all images left except the first one
+        $(this).animate({left: `-=${imgWidth}`}); //Move all images left except the first one
     });
 
     imgClass.first().fadeOut("slow", "linear", function(){ //Fade out first image, when it fades out, the callback function is called
@@ -50,14 +56,14 @@ function slideLeft(rowNumber){
 
 //Slide images right
 function slideRight(rowNumber){
-    const imgClass = $(".row" + rowNumber);
+    const imgClass = $(`.row${rowNumber}`);
     imgWidth = imgClass.last().width() + 10; // Width + padding of last image in row
     
     imgClass.last().prevAll().each(function(){
-        $(this).animate({left: "+=" + imgWidth}); //Move all images right except the last one
+        $(this).animate({left: `+=${imgWidth}`}); //Move all images right except the last one
     });
 
-    imgClass.last().animate({left: "+=" + imgWidth}, function(){ //Move the last image right, when it finishes moving right the callback function is called
+    imgClass.last().animate({left: `+=${imgWidth}`}, function(){ //Move the last image right, when it finishes moving right the callback function is called
         imgClass.each(function(){ //Reset css left for all images to 0
             $(this).css("left", "0px");
         });

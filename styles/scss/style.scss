@@ -31,25 +31,24 @@ header {
 
  aside {
   height: 295px;
-  margin-top: 47px;
+  margin-top: 60px;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 } 
 
 p{
   @include text;
-  height: 155px;
   line-height: 26px;
-  margin-top: 10px;
+  margin-top: 20px;
   color: $textColor;
   font-size: $textSize;
 }
 
 h1{
     @include text;
-    height: 120px;
     line-height: 38px;
     margin: 0px;
+    padding-bottom: 5px;
     color: $headerColor;
     font-size: $headerTextSize;
 }
@@ -58,6 +57,7 @@ main {
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   overflow: hidden;
+  margin-top: 15px;
 }
 
 footer {
@@ -73,7 +73,7 @@ footer {
   overflow: hidden;
   height: 200px;
   width: 1230px;
-  left: -605px;
+  left: -610px;
   margin-top: 47px;
   gap: $elementGap;
 }
@@ -85,7 +85,7 @@ footer {
   justify-content: end;
   height: 200px;
   width: 1240px;
-  left: -595px; 
+  left: -600px; 
   top: 10px;
   gap: 100px;
 }  
@@ -98,6 +98,7 @@ footer {
   overflow: hidden;
   height: 200px;
   width: 1080px;
+  left: -20px;
   gap: $elementGap;
 }
 
@@ -125,6 +126,7 @@ button{
   border: 1;
   border-color:$borderColor;
   border-radius: $elBorderRadius;
+  background-color: $buttonColor;
 }
 
 #arrowLeft{
@@ -132,9 +134,20 @@ button{
   @include buttons;
 }
 
+#arrowLeft:disabled{
+  background-color:white;
+}
+
 #arrowLeft:hover{
   background-image: url("../../assets/arrow-blue-left.png");
   border-color:$borderColorHover;
+  background-color: $buttonColor;
+}
+
+#arrowLeft:hover:disabled{
+  background-image: url("../../assets/arrow-gray-left.png");
+  border-color:$borderColor;
+  @include buttons;
 }
 
 #arrowRight{
@@ -142,15 +155,18 @@ button{
   @include buttons;
 }
 
-#arrowRight:hover{
-  background-image: url("../../assets/arrow-blue-right.png");
-  border-color:$borderColorHover;
-}
-
 #arrowRight:disabled{
   background-color: white;
 }
 
-#arrowLeft:disabled{
-  background-color:white;
+#arrowRight:hover{
+  background-image: url("../../assets/arrow-blue-right.png");
+  border-color:$borderColorHover;
+  background-color: $buttonColor;
+}
+
+#arrowRight:hover:disabled{
+  background-image: url("../../assets/arrow-gray-right.png");
+  border-color:$borderColor;
+  @include buttons;
 }
